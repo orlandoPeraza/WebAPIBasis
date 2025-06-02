@@ -13,7 +13,7 @@ namespace WebAPI.Controllers
         }
 
         [HttpGet("{id}")]
-        public string GetShirtById(int id, [FromQuery] string color)
+        public string GetShirtById(int id, [FromHeader(Name = "Color")] string color)
         {
             return $"Reading shirt: id: {id}, color: {color}";
         }
