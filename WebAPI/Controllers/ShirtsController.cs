@@ -12,10 +12,10 @@ namespace WebAPI.Controllers
             return "Reading all the shirts";
         }
 
-        [HttpGet("{id}")]
-        public string GetShirtById(int id)
+        [HttpGet("{id}/{color}")]
+        public string GetShirtById(int id, [FromRoute] string color)
         {
-            return $"Reading shirt: {id}";
+            return $"Reading shirt: id: {id}, color: {color}";
         }
 
         [HttpPost]
