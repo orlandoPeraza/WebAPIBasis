@@ -7,7 +7,7 @@ namespace WebAPI.Models.Validations
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {
             var shirt = validationContext.ObjectInstance as Shirt;
-            if (shirt != null)
+            if (shirt != null && !string.IsNullOrWhiteSpace(shirt.Gender))
             {
                 if (shirt.Gender.Equals("men", StringComparison.OrdinalIgnoreCase) && shirt.Size < 8)
                 {
