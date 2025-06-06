@@ -15,7 +15,7 @@ namespace WebAPI.Models.Validations
                 }
                 else if (shirt.Gender.Equals("women", StringComparison.OrdinalIgnoreCase) && shirt.Size < 6)
                 {
-                    return new ValidationResult("For men's shirts, the size has to be greater or equal to 8.");
+                    return new ValidationResult("For women's shirts, the size has to be greater or equal to 6.");
                 }
             }
             return ValidationResult.Success;
